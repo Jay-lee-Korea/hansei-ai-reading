@@ -31,7 +31,7 @@ AI를 "브라우저 채팅창" 밖으로 꺼내, **터미널에서 고전을 함
 
 ```bash
 cd ~/Desktop
-git clone https://github.com/[레포주소]/hansei-ai-reading.git
+git clone https://github.com/Jay-lee-Korea/hansei-ai-reading.git
 cd hansei-ai-reading
 ```
 
