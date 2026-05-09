@@ -92,16 +92,13 @@ description: 에세이 자가 점검 스킬. 본인 에세이를 4개 기준(비
 | 1 | 4개 기준 평가 — 비판적 사고(40), AI 활용 적절성(30), 논리 구조(20), 독창성(10) |
 | 2 | 종합 피드백 — 100점 만점 점수표 + 최우선 개선 과제 3가지 |
 
+**기본 동작**: `/에세이코치` Block 5는 결과물을 `essay_final.md`로 저장한다. 따라서 본 스킬은 별도 안내가 없으면 `essay_final.md`를 기본 대상으로 사용한다. 그 파일이 없거나 학생이 다른 파일을 평가하고 싶다고 명시하면 그때만 묻는다.
+
 ```json
 AskUserQuestion({
   "questions": [
     {
-      "question": "심사할 에세이 파일명을 알려주세요. (예: essay_final.md)",
-      "header": "에세이 선택",
-      "allowFreeText": true
-    },
-    {
-      "question": "어떤 블록부터 시작하시겠습니까?",
+      "question": "어떤 블록부터 시작하시겠습니까? (대상 파일은 기본 essay_final.md)",
       "header": "시작 블록 선택",
       "options": [
         {"label": "Block 1: 4개 기준 평가", "description": "기준별 상세 심사"},
