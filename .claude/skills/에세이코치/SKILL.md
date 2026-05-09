@@ -119,25 +119,14 @@ AI가 대신 써주는 게 아니라, AI와 함께 "당신의 글"을 만드는 
 선택된 텍스트: {파일명}  ← 자료/내선택.md에서 읽어와 표시
 ```
 
-```json
-AskUserQuestion({
-  "questions": [
-    {
-      "question": "어떤 단계부터 시작하시겠습니까?",
-      "header": "시작 블록",
-      "options": [
-        {"label": "Block 1: 논점 추출", "description": "에세이 주제 찾기"},
-        {"label": "Block 2: 구조 설계", "description": "서론-본론-결론"},
-        {"label": "Block 3: AI 초안 생성", "description": "Sonnet 권장, 800자 초안"},
-        {"label": "Block 4: 비판적 검토 & 수정", "description": "⭐ 핵심 단계"},
-        {"label": "Block 5: 나의 관점 + 최종 저장", "description": "마무리"},
-        {"label": "처음부터", "description": "Block 1부터 순서대로"}
-      ],
-      "multiSelect": false
-    }
-  ]
-})
+위 Block 표(있다면)를 보여준 뒤, **일반 텍스트로 학생에게 묻는다** (⚠️ AskUserQuestion 사용 금지 — 옵션이 6개라 max 4를 위반하여 "Invalid tool parameters" 에러 발생):
+
 ```
+어떤 단계부터 시작하시겠습니까?
+번호(1~5) 또는 '처음부터'로 답해주세요. (예: "1번", "처음부터", "Block 3")
+```
+
+학생 응답을 받으면 그 블록의 Phase A부터 진행한다. "처음부터" 또는 "1번"이면 Block 1부터 순서대로.
 
 > 시작 블록 선택 후 → 해당 블록의 Phase A부터 진행한다.
 
