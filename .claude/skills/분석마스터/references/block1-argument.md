@@ -46,15 +46,11 @@
 
 ## QUIZ
 
-```json
-AskUserQuestion({
-  "questions": [{
-    "question": "분석 결과에서 가장 흥미로운 논리적 약점은 무엇이었나요? 왜 흥미로웠는지도 알려주세요.",
-    "header": "📚 논증 분석 돌아보기",
-    "allowFreeText": true
-  }]
-})
-```
+학생에게 **일반 텍스트로 묻는다** (자유 답변형이라 AskUserQuestion 사용 금지 — options 필드 필수, "Invalid tool parameters" 에러 발생):
+
+> **📚 논증 분석 돌아보기**
+>
+> 분석 결과에서 가장 흥미로운 논리적 약점은 무엇이었나요? 왜 흥미로웠는지도 알려주세요.
 
 학생의 답변에 대해:
 - 선택한 약점이 왜 중요한지 추가 설명한다
